@@ -188,7 +188,7 @@ function! s:parseConfig()
       let l:opt = substitute(l:opt, '\C-I\s*\(\%(\w\|\\\s\)*\)',
             \ '-I' . l:local_conf[:-16] . '\1', 'g')
     endif
-    let b:clang_user_options .= ' ' . l:opt
+    let b:clang_user_options .= ' ' . shellescape(l:opt)
   endfor
 endfunction
 
